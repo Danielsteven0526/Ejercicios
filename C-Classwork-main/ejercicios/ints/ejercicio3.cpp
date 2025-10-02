@@ -1,12 +1,24 @@
-// Ejercicio 3: Factorial de un número
 #include <iostream>
 using namespace std;
+
 int main() {
-    int n, fact = 1;
-    cout << "Ingrese un número entero: ";
-    cin >> n;
-    for(int i = 1; i <= n; i++)
-        fact *= i;
-    cout << "Factorial: " << fact << endl;
+    int t;
+    cout << "¿Cuántos factoriales desea calcular?: ";
+    cin >> t;
+
+    int* numeros = new int[t];
+    for(int i = 0; i < t; i++) {
+        cout << "Número " << i+1 << ": ";
+        cin >> numeros[i];
+    }
+
+    for(int i = 0; i < t; i++) {
+        int fact = 1;
+        for(int j = 1; j <= numeros[i]; j++)
+            fact *= j;
+        cout << "Factorial de " << numeros[i] << ": " << fact << endl;
+    }
+
+    delete[] numeros;
     return 0;
 }
