@@ -1,9 +1,14 @@
-// Ejercicio 1: Ciclo for
 #include <iostream>
 using namespace std;
+
 int main() {
-    for(int i = 1; i <= 5; i++) {
+    int n;
+    cout << "¿Cuántas iteraciones desea realizar?: ";
+    cin >> n;
+
+    for(int i = 1; i <= n; i++) {
         cout << "Iteración " << i << endl;
     }
+
     return 0;
 }
