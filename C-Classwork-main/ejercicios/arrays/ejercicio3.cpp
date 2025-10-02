@@ -1,13 +1,21 @@
-// Ejercicio 3: Promedio de un arreglo
 #include <iostream>
 using namespace std;
+
 int main() {
-    int arr[5], suma = 0;
-    cout << "Ingrese 5 números: ";
-    for(int i = 0; i < 5; i++) {
+    int n, suma = 0;
+    cout << "¿Cuántos números desea ingresar?: ";
+    cin >> n;
+
+    int* arr = new int[n];
+
+    for(int i = 0; i < n; i++) {
+        cout << "Número " << i+1 << ": ";
         cin >> arr[i];
         suma += arr[i];
     }
-    cout << "Promedio: " << (float)suma/5 << endl;
+
+    cout << "Promedio: " << (float)suma / n << endl;
+
+    delete[] arr;
     return 0;
 }
